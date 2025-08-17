@@ -41,7 +41,7 @@ npm install
 
 3. Create a `.env` file in the root directory with the following variables:
 ```env
-PORT=5000
+PORT=8000
 MONGODB_URI=mongodb://localhost:27017/taskboard
 JWT_SECRET=your_jwt_secret_key_here
 NODE_ENV=development
@@ -89,7 +89,7 @@ Authorization: Bearer <your_jwt_token>
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| PORT | Server port | 5000 |
+| PORT | Server port | 8000 |
 | MONGODB_URI | MongoDB connection string | mongodb://localhost:27017/taskboard |
 | JWT_SECRET | Secret key for JWT tokens | Required |
 | NODE_ENV | Environment (development/production) | development |
@@ -101,7 +101,7 @@ Authorization: Bearer <your_jwt_token>
 1. Set environment variables:
 ```env
 NODE_ENV=production
-PORT=5000
+PORT=8000
 MONGODB_URI=your_production_mongodb_uri
 JWT_SECRET=your_secure_jwt_secret
 ```

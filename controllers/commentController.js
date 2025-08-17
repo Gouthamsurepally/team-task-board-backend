@@ -29,7 +29,7 @@ exports.createComment = async (req, res) => {
 
     const comment = await Comment.create({
       taskId,
-      authorId: req.user._id,
+      authorId: req.user.userId,
       body,
     });
 
@@ -65,7 +65,7 @@ exports.updateComment = async (req, res) => {
     }
 
     // Check if user is the author
-    if (comment.authorId.toString() !== req.user._id.toString()) {
+    if (comment.authorId.toString() !== req.user.userId.toString()) {
       return res.status(403).json({ 
         success: false,
         message: 'Not authorized to update this comment' 
@@ -106,7 +106,7 @@ exports.deleteComment = async (req, res) => {
     }
 
     // Check if user is the author
-    if (comment.authorId.toString() !== req.user._id.toString()) {
+    if (comment.authorId.toString() !== req.user.userId.toString()) {
       return res.status(403).json({ 
         success: false,
         message: 'Not authorized to delete this comment' 

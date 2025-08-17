@@ -28,6 +28,7 @@ const protect = async (req, res, next) => {
 
     // Add user info to request
     req.user = {
+      _id: decoded.userId,
       userId: decoded.userId,
       email: user.email,
       name: user.name
