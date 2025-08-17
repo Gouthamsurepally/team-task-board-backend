@@ -52,7 +52,7 @@ NODE_ENV=development
 npm run dev
 ```
 
-The server will start on http://localhost:5000
+The server will start on http://localhost:8000
 
 ## Scripts
 
@@ -62,21 +62,32 @@ The server will start on http://localhost:5000
 ## API Endpoints
 
 ### Authentication Routes
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Login user
-- `GET /api/auth/users` - Get all users (protected)
+- `POST /auth/register` - Register a new user
+![alt text](<Screenshot (75).png>)
+- `POST /auth/login` - Login user
+![alt text](image.png)
+- `GET /auth/users` - Get all users (protected)
+![alt text](image-1.png)
 
 ### Task Routes (Protected)
-- `GET /api/tasks` - Get all tasks
-- `POST /api/tasks` - Create a new task
-- `PUT /api/tasks/:id` - Update a task
-- `DELETE /api/tasks/:id` - Delete a task
+- `GET /tasks/get-all-tasks` - Get all tasks
+![alt text](image-2.png)
+- `POST /tasks/create-task` - Create a new task
+![alt text](image-3.png)
+- `PUT /tasks/update-task/:id` - Update a task
+![alt text](image-4.png)
+- `DELETE /tasks/delete-task/:id` - Delete a task
+![alt text](image-5.png)
+- `PATCH /tasks/:id/move` - Update a task status
+![alt text](<Screenshot (85).png>)
 
 ### Comment Routes (Protected)
-- `GET /api/comments/:taskId` - Get comments for a task
-- `POST /api/comments` - Add a comment to a task
-- `PUT /api/comments/:id` - Update a comment
-- `DELETE /api/comments/:id` - Delete a comment
+- `GET /comments/get-comment-for-task/:taskId` - Get comments for a task
+![alt text](image-7.png)
+- `POST /comments/create-comment/:taskId` - Add a comment to a task
+![alt text](image-6.png)
+- `DELETE /comments/delete-comment/:id` - Delete a comment
+![alt text](image-8.png)
 
 ## Authentication
 
