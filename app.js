@@ -13,7 +13,7 @@ app.use('/tasks', require('./routes/tasks'));
 app.use('/comments', require('./routes/comments'));
 
 // Health check
-app.get('/health', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ message: 'Task Board API is running' });
 });
 

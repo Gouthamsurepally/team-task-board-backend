@@ -44,6 +44,13 @@ exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    if(!email || !password){
+      return res.status(400).json({
+        success: false,
+        message: "Email and password required."
+      })
+    }
+
     const user = await User.findOne({ email }).select('+password');
     if (!user || !(await bcrypt.compare(password, user.password))) {
       return res.status(401).json({ message: 'Invalid credentials' });
@@ -51,7 +58,7 @@ exports.login = async (req, res) => {
 
     const token = generateToken(user._id);
 
-    res.json({
+    res.status(200).json({
       success: true,
       message: 'Login successful',
       user: {
@@ -70,7 +77,7 @@ exports.getUsers = async (req, res) => {
   try {
     const users = await User.find({ deleted: false }).select('-password');
     
-    res.json({
+    res.status(200).json({
       success: true,
       message: 'Users retrieved successfully',
       users,
